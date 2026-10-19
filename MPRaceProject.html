@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Multiplayer Races | Ade Cross</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Faster+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <style>
+      .project h1{
+        font-family: "Faster One", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
+        font-weight: 400;
+        font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+        width: fit-content;
+      }
+      .project h1::after{
+        content: "";
+        display: block;
+        height: 8px;
+        margin-top: 10px;
+        background: repeating-conic-gradient(currentColor 0 25%, transparent 0 50%) 0 0 / 8px 8px;
+      }
+    </style>
+</head>
+
+<body>
+  <main class="wrap project">
+    <a class="back" href="index.html">Back to all projects</a>
+    <h1>Multiplayer Races</h1>
+    <p class="meta">Unreal Engine 5 &middot; ARCADIA &middot; Lead Technical Designer</p>
+    <div class="youtubeVideo">
+      <iframe src="https://www.youtube.com/embed/3caQ4la97kM" title="MindsEye Multiplayer Races Trailer" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        Six Multiplayer Races were the headline feature of the MindsEye multiplayer launch in July 2026:
+        QuickSilva, Rattlesnake, Factory Loop, Area S, Summer Circuit and The Strip.
+        Each one puts up to 12 players on the grid with boost enabled.
+      </p>
+      <p>
+        I led the team of technical level designers that delivered all six in four months,
+        keeping delivery on track through a change of team member part-way through.
+        We built the race game mode as a single shared template, broken into sections with one owner each.
+        Every designer also owned two races, so an improvement made to any section of the template
+        flowed straight into every race, and the whole team could work in parallel.
+        I led the races in parallel with <a href="GrenadeFootballProject.html">Grenade Football</a>, each with its own
+        team.
+      </p>
+    </section>
+    <section>
+      <h2>What I Built</h2>
+      <p>The race gameplay splits into five sections.</p>
+      <ul>
+        <li>Track Design
+          <ul>
+            <li>
+              Each track was implemented by its race owner and refined through multiple rounds of feedback.
+              Where we could not achieve what we wanted with what we had, we pulled in the Art team and requested
+              additional assets to get the desired feel.
+              Gates were placed deliberately, either to prevent corner cutting or to allow shortcuts where we wanted
+              them.</li>
+          </ul>
+        </li>
+        <li>Vehicle Balancing &amp; Boost Mechanics
+          <ul>
+            <li>
+              I balanced the rubber-banding settings of the engines, giving more performance to cars further back so
+              that players who fell behind through an accident or lack of skill could catch back up.
+            </li>
+            <li>
+              I balanced how much boost a player gets from a boost block using a formula. Players inside the competitive
+              zone receive the minimum amount, and beyond it, a logarithmic curve increases the boost the further behind
+              they are. As an example, the competitive zone might be 7% of the total track length behind the leader; the
+              values were tuned for each race to suit its track length.
+            </li>
+          </ul>
+        </li>
+        <li>Gate, Player and Boundary Management
+          <ul>
+            <li>Designed and implemented a simple out-of-bounds system that keeps players on the track without the need
+              for walls. A player who leaves the track is reset to the last gate they passed.</li>
+            <li>Designed and implemented a wrong-way system that combines vector maths with distance checks and timers,
+              giving the player accurate but non-invasive feedback through a "Wrong Way" warning at the top of the
+              screen.</li>
+          </ul>
+        </li>
+        <li>Final Fanfare &amp; Podium Placement
+          <ul>
+            <li>Directed the finish sequence and its final camera pan, including how the players and vehicles that
+              missed the podium are moved out of shot.</li>
+            <li>The sequence is a rewrite of a script I originally implemented for Everywhere a few years earlier.</li>
+            <li>Worked with the Art team to find the podium location for each race.</li>
+          </ul>
+        </li>
+        <li>Vehicle Selection &amp; Race Countdown
+          <ul>
+            <li>Helped with vehicle selection, including the design of the scripting tool that implements it and how it
+              became part of the Multiplayer Race template.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Lessons</h2>
+      <p>
+        The key to this project was a good template. Because each team member could update their own
+        part of it seamlessly, we were able to work in parallel and keep all six races moving forward together.
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>

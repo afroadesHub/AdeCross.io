@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Careless Survival | Ade Cross</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Nosifer&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+    <style>
+      .project h1{
+        font-family: "Nosifer", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
+        font-weight: 400;
+        font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+      }
+    </style>
+</head>
+
+<body>
+  <main class="wrap project">
+    <a class="back" href="index.html">Back to all projects</a>
+    <h1>C.A.R.E.less Survival</h1>
+    <p class="meta">Unreal Engine 5 &middot; ARCADIA &middot; Lead Technical Designer</p>
+    <div class="youtubeVideo">
+      <iframe src="https://www.youtube.com/embed/fpMkhxZlNOo" title="CARELess Playthrough" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        C.A.R.E.less Survival is a Halloween-themed survival game set in the suburbs of Red Rock City,
+        it was released as post-launch content in the Halloween 2025 update.
+        Mercenaries have been hired by the mayor to take out a key witness in a high-stakes political case, and with the city's
+        robot task force, Community Automated Response Enforcement (C.A.R.E.) system down and Halloween as cover, it
+        is the perfect time to strike. Defend the victim until midnight when the C.A.R.E. system comes back online or die trying.
+      </p>
+    </section>
+    <section>
+      <h2>Gameplay</h2>
+      <ul>
+        <li>A 24-hour clock at the top of the screen starts at 20:00, and the player has to keep the witness alive until
+          midnight 00:00.</li>
+        <li>Enemies storm the house from all over the neighbourhood and try to shoot the witness, who is lying in a medical bed. The game has a hidden wave system to allow a steadily increasing flow of enemies as well as timed events to up the ante with different kinds of enemies.</li>
+        <li> Weapons, ammo and health pick-ups are hidden throughout in randomised locations. The suburbs are a network of houses, front and back gardens and connecting passageways, along with retail car parks
+          outside where the player can search.</li>
+        <li>The player can only carry four resources at once, but can stockpile them in the garage of the witness's
+          house.</li>
+        <li>Allied agents can be found around the map and recruited to defend the house giving the player a little more time to go explore further.</li>
+        <li>A list of challenges is shown on the opening title screen. The achievements earned are saved between
+          playthroughs and will be highlighted once completed as well as the player receiving a notification in game.</li>
+        <li>An external generator is being used to keep the witness alive. The player cannot bunker down and must go out to maintain the generator to keep the life support system on.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Design Goals</h2>
+      <p>
+        We wanted to bring something new to the Arcadia platform that stood out and brought players back to play again
+        and again.
+        We identified two areas to focus on: the first was challenging the player through heightened difficulty,
+        and the second giving them the freedom to choose how to complete the game.
+      </p>
+      <ul>
+        <li>The game is hard to complete. Learning the map and the possible spawn locations takes a few tries.</li>
+        <li>The player has to balance staying at the house to defend the witness against roaming the suburbs for weapons, resources and to make sure the generator keeps ticking.</li>
+        <li>All the player needs is out there scattered across the map. The player's agency dictates the timing, and the order in 
+          which they make choices changes the outcome of every new game, so there is a different way to play every time.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>My Role</h2>
+      <p>
+        I led the team with some hurdles set out from the start. It came with three challenges: a newly formed team of six,
+        most of whom had not worked together before; a one-month schedule from start to finish;
+        and longer-term projects sharing the same launch date that took higher priority.
+      </p>
+      <ul>
+        <li>Stitched everyone's content together into a single level, reviewed the work and fixed bugs.</li>
+        <li>Covered team members roles while they were on holiday or off sick, which had me working on AI enemies,
+          pick-ups, wave flow management, achievements and time management.</li>
+        <li>The localisation for the whole project had to be written in the first 72 hours, so we committed to what we
+          had written and built to it.</li>
+        <li>Repurposed existing content, adding new systems only where it would enhance the overall experience of the content</li>
+        <li>With a new team I had to trust people to do their jobs, but after reviewing their work and talking it
+          through, I moved people off some areas of development and onto others to protect the core features.</li>
+        <li>Spent a lot of time training less experienced team members in the fundamentals. It is better to teach than
+          to take over, especially when people are willing to listen, but time is something you cannot get back, and
+          when a deadline is looming, decisions have to be made to meet the goal.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>What I Built</h2>
+      <ul>
+        <li>Implemented ammo and weapon scripting tools.</li>
+        <li>Implemented an update to AI's so they did not drop their weapons by default</li>
+        <li>Implemented a system to properly hide unwanted features carried over from the main game.
+          <ul>
+            <li>In the main game, when the player reaches low health a red blood vignette tinges the edges of the screen and turns the
+              picture black and white. With a dark, spooky Halloween setting and a health system that does not recover
+              automatically, this would have left the player with too low visibility for an unacceptably long time, so I
+              removed the discolouring of the screen on low health to enable better visibility.</li>
+            <li>This, along with the health regeneration system we implemented, went on to be used in other published
+              games.</li>
+          </ul>
+        </li>
+        <li>Brought the enemies, pick-ups, wave flow, achievements and time management up to a polished standard.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Challenges</h2>
+      <ul>
+        <li>Balancing. One of our goals was to challenge the player through difficulty, and to keep that fair we needed
+          to test the player against the full suite of gameplay features. With every feature developed in parallel and
+          finishing at the same time, we had only a small window to balance the game. We started with a theory, tested
+          against it, then edited, tweaked and refined the waves to reach a place that challenged the player enough to still be fun.</li>
+        <li>Enemy targeting. The enemy AI we had to work with was built for linear single-player gameplay, but we wanted
+          it to have multiple targets: the player, the allied AI and the witness. This meant implementing a system that
+          overrides the behaviour and switches an enemy's target depending on situational criteria.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Result</h2>
+      <p>
+        C.A.R.E.less Survival was developed in one month and released on time as part of the Halloween 2025 update.
+        Analytics showed it had the single highest player session length of all the ARCADIA games, with players spending several
+        hours in a game that takes a maximum 20 minutes to complete.
+      </p>
+    </section>
+    <section>
+      <h2>Lessons</h2>
+      <ul>
+        <li>I have learned to start with a full design document and iterate against it, rather than starting from a skeleton design and adding as
+          you go. This gives the team clarity when they need a point of reference and removes the time spent waiting on
+          answers to questions. This further benefits the design in totality. When changes are made you can compare them to the rest of the design and easily
+          identify the places where it can cause friction or will enhance play.</li>
+        <li>I have learned to give people the opportunity to work above their normal level, and work hand in hand with them to make sure
+          they achieve it.</li>
+      </ul>
+    </section>
+  </main>
+</body>
+
+</html>

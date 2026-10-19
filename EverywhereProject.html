@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Everywhere | Ade Cross</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Michroma&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project h1 {
+      font-family: "Michroma", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.03em;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap project">
+    <a class="back" href="index.html">Back to all projects</a>
+    <h1>Everywher<span class="flipText">E</span> - Open Beta</h1>
+    <p class="meta">Build A Rocket Boy &middot; 2018&ndash;2024 &middot; Unreal Engine 5 &middot; Lua &middot; ARCADIA &middot;
+      Associate &rarr; Senior Technical Designer</p>
+    <div class="youtubeVideo">
+      <iframe src="https://www.youtube.com/embed/y4nIWdMCpaU" title="Everywhere Open Beta Trailer" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        The Everywhere Open Beta, held in 2024, invited the public into the game to create their own experiences,
+        from deathmatches and races to environments and personally curated game modes.
+        I worked on the race game mode, and these were the first of our races to be shown to the public.
+        At this stage we were building Arcadia itself, and the race nodes were among the first tools made for it.
+      </p>
+      <p>
+        The vehicles were arcade-style, with a futuristic, utopia-punk feel and mostly cosmetic upgrades,
+        of which the first tier was available for free in the beta.
+        Every race level was built in the builder's UGC editor letting their own creativity be the only limit on what could be built.
+      </p>
+    </section>
+    <section>
+      <h2>My Role</h2>
+      <ul>
+        <li>Led a cross-discipline team of 20 across code, design, art and audio to develop the racing game modes,
+          owning balancing, race variations and track design.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>What I Built</h2>
+      <p>
+        Built visual scripting tools that let players create content with no knowledge of programming.
+      </p>
+      <ul>
+        <li>Wrote the full set of Lua scripts that the races were originally based on.</li>
+        <li>Worked with a colleague over six months to turn those scripts into a suite of scripting nodes with
+          customisable inputs, outputs and connections. The nodes detect when a player passes a gate, track each
+          player's position in the race, and supply the base race UI, keeping the time, current gate and position up to
+          date.</li>
+        <li>When making scripting tools for players, you have to decide how granular to make them. The more granular the
+          tool, the more options builders have, but the more complex it becomes. We wanted players to be able to make
+          something quickly, so we put the majority of the logic into a single management node.</li>
+        <li>From that one node, a builder chooses between a looped or point-to-point race and other settings/options. Gates are placed as separate
+          nodes, as many as the builder wants, and linked together in the order they should be driven.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Result</h2>
+      <p>
+        We gave builders a race template to start from, and the level design they wrapped around it was really exciting
+        to see.
+        Players made some great tracks, from Gothic and spooky settings that went back in time to futuristic races.
+      </p>
+    </section>
+    <section>
+      <h2>Lessons</h2>
+      <p>
+        The races were in a transition from script to logic nodes at the time, so some things were a little rushed
+        and the tools did not have the full functionality we wanted to give players.
+        Coming back to it for the <a href="MPRaceProject.html">MindsEye Multiplayer Races</a>, we were able to improve
+        the template considerably, making it cleaner, easier to use and far more capable. That is why six races could be
+        built and launched in four months.
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>

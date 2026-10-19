@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Action Races | Ade Cross</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Faster+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+      <style>
+      .project h1{
+        font-family: "Faster One", sans-serif;
+        text-transform: uppercase;
+        letter-spacing: -0.03em;
+        font-weight: 400;
+        font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+        width: fit-content;
+      }
+      .project h1::after{
+        content: "";
+        display: block;
+        height: 8px;
+        margin-top: 10px;
+        background: repeating-conic-gradient(currentColor 0 25%, transparent 0 50%) 0 0 / 8px 8px;
+      }
+    </style>
+</head>
+
+<body>
+  <main class="wrap project">
+    <a class="back" href="index.html">Back to all projects</a>
+    <h1>Action Races</h1>
+    <p class="meta">Unreal Engine 5 &middot; ARCADIA &middot; Lead Technical Designer</p>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        Action Races are timed single-player races released as post-launch content for MindsEye,
+        where the player is chasing the fastest time they can set whilst avoiding the destruction unraveling around them.
+        Chaos is breaking out across the city, with robots and civilians attacking each other,
+        and the race runs straight through the middle of it.
+        Along the route, action events play out around the player: fights breaking out at the roadside,
+        spontaneous explosions, and vehicles swerving into their path that they have to outmaneuver.
+      </p>
+    </section>
+    <section>
+      <h2>Road To Hell</h2>
+      <p>A point-to-point race set in the street and underpasses around the Hyperloop Terminal.</p>
+    </section>
+    <div class="youtubeVideo">
+      <iframe src="https://www.youtube.com/embed/78aUrKBUn2g" title="Road To Hell - Race - MindsEye" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <section>
+      <h2>Short Circuiting</h2>
+      <p>A three-lap circuit set in a sandstorm on the edge of the city, each lap throwing something different at you.</p>
+    </section>
+    <div class="youtubeVideo">
+      <iframe src="https://www.youtube.com/embed/tPz2Xu0-i-E" title="Short Circuiting - Race - MindsEye" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <section>
+      <h2>My Role</h2>
+      <ul>
+        <li>Oversaw the two level designers who built both races, reviewing their level design and directing a further
+          pass on the content.</li>
+        <li>Performance was the biggest issue, so we changed the routes, and removed and reordered some of the action
+          events, keeping the races intense while making them less strenuous on the machine.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>What I Built</h2>
+      <ul>
+        <li>Cleaned up the race logic after the level design pass.</li>
+        <li>Implemented a clean up system, that improved performance by cleaning up AI, VFX and vehicles that were still
+          active but no longer in use.</li>
+        <li>Ran performance passes on both races. Everything was built in Arcadia, with the Unreal profiling tools used
+          to debug performance.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Result</h2>
+      <p>
+        Performance improved from lows of 10fps to a baseline of 30fps throughout both races, delivering an
+        action-packed experience in a single-player environment.
+      </p>
+    </section>
+  </main>
+</body>
+
+</html>

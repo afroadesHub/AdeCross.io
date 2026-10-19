@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Roam | Ade Cross</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Rubik+Dirt&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+      .project h1 {
+      font-family: "Rubik Dirt", sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+    }
+  </style>
+</head>
+
+<body>
+    <main class="wrap project">
+        <a class="back" href="index.html">Back to all projects</a>
+        <h1>Free Roam</h1>
+        <p class="meta">Unreal Engine 5 &middot; Lead Technical Designer</p>
+        <div class="youtubeVideo">
+            <iframe src="https://www.youtube.com/embed/QOBgy1HOsM0" title="Free Roam Demo" loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <section>
+            <h2>Overview</h2>
+            <p>
+                Free Roam is an open-world experience set after the events of the MindsEye campaign,
+                designed to keep players engaged once the story was complete.
+                It was planned as a platform we could keep building on over a long period,
+                with new updates and new content bringing players back.
+            </p>
+            <p>
+                It was built purely with Arcadia tools, on top of a city designed for linear missions rather than
+                open-world play,
+                and with multiplayer in mind for the future.
+                In an open world you have to think about what is happening all around the player at all times,
+                and give them the freedom to decide how to solve the challenge in front of them.
+            </p>
+        </section>
+        <section>
+            <h2>Design</h2>
+            <p>
+                At the end of the campaign the robots are taking over, so Free Roam takes place in an almost
+                post-apocalyptic city
+                where robots walk the streets and people live on while they can.
+                We identified the core things a player would want: challenge, an economy with taps and sinks,
+                transport across a big map, agency and progression. Based on this, we built:
+            </p>
+            <ul>
+                <li>Factions: Split the city into four: the military, the robots, the Back Niners (a gang who want
+                    nothing to do with technology) and ordinary civilians. This gave us sets of missions we could apply
+                    to every faction, and let the player be comfortable with some factions and more aggressive towards
+                    others.</li>
+                <li>Fortresses: faction outposts where the player fights their way to the top and earns a reward for
+                    clearing out the base.</li>
+                <li>Stealing missions: for players who want to play both sides, characters around the city send them to
+                    steal a vehicle or military supplies such as ammo and bring them back.</li>
+                <li>Ambient environments: factions going about their own business, which the player can interact with
+                    and which let us tell some story, such as huge robots harvesting the ground, or prisoners being
+                    marched around by robots that the player can disrupt and free.</li>
+                <li>A storyline: the player controls a climate preacher, a wild, eccentric character, and a set of story
+                    missions ties the world together and helps the player understand what is going on.</li>
+                <li>A policing system: if the player starts shooting wildly, the local faction's response unit comes
+                    after them.</li>
+                <li>Progression: upgrades to weapons, vehicles and other systems in discoverable shops as the player gets to know the city and
+                    its economy through exploration.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>My Role</h2>
+            <ul>
+                <li>Started with two very talented level designers. I did most of the technical lifting on the logic and
+                    taught them how to approach things in a more technical way, while they set-dressed, built the paths
+                    the player would take and set up the AI.</li>
+                <li>When we moved on to the main storyline, two more level designers joined the team. Together we
+                    created a story to show who the climate preacher was and what drove them.</li>
+                <li>Gave the level designers as much agency as possible to come up with their own ideas for how to build
+                    each mission, within the design we had agreed together.</li>
+                <li>Led Free Roam for six months before handing it over to another team, while I focused on the content
+                    coming out in the game's updates.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>What I Built</h2>
+            <ul>
+                <li>A vehicle recall system, so once the player owns a vehicle they can call it to them at any point.
+                    <ul>
+                        <li>Vehicles only spawn on roads. The system finds the road closest to the player, picks a point
+                            around 150 metres along it and places an invisible marker there.</li>
+                        <li>If the marker is in the player's camera view, it tries the road in the other direction, and
+                            keeps searching until it finds a plausible spot out of sight. The vehicle spawns there and
+                            uses the road network to drive as close as it can before heading straight for the player.
+                        </li>
+                        <li>Built with the outsourced studio responsible for the vehicle AI system and road network. It
+                            means the player always has a vehicle close at hand, giving them far more freedom to move
+                            around the city without long walks between areas.</li>
+                    </ul>
+                </li>
+                <li>A mission handling system that tracks which missions are active and which are complete, and controls
+                    how they instantiate. It needed more information than Arcadia alone could provide, so I designed it, the
+                    systems programming and backend teams built the Unreal side with me, and I scripted the Arcadia
+                    nodes that we then used in the game.</li>
+                <li>A mission activation system that starts and stops a series of airdrop sub missions on a timer, with
+                    a notification system that draws the player to the correct location and loads the content
+                    accordingly.</li>
+                <li>A home upgrade system, with locked doors in the player's home that they unlock through the economy.
+                </li>
+                <li>The design of the missions scattered across the map.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Challenges</h2>
+            <ul>
+                <li>Arcadia had no proper level of detail (LOD) system for its assets, so we couldn't have permanently
+                    loaded assets scattered all over the map. We built the map from level instantiators, which spawn
+                    self-contained "sub" levels only when the player is in range, so different things could be going on
+                    all over the map but not simultaneously loaded. At first these sub levels had no way of sharing information with the main logic,
+                    so each one had to work fully on its own.</li>
+                <li>That broke down for stealing missions, which play out over long distances, so we retrofitted a
+                    partnership between the two kinds of level. A sub mission spawns then signals to the main mission to spawn 
+                    the cargo in its area, such as
+                    metal boxes at a pickup point, then tells the main level to spawn the truck that can carry them. The
+                    main level in turn gives or withholds permission for certain sub missions to spawn, so the same area can be populated with enemies or
+                    left as a normal ambient space.</li>
+                <li>The enemy AI was built to never disengage. We made each area's exit trigger larger than its enter
+                    trigger, so a player leaving is running away from the centre and facing away from the AI when it
+                    despawns. We also sent forceful commands for the AI to return to its area once the player had gone a
+                    certain distance from a fortress.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>Result</h2>
+            <p>
+                A first version of Free Roam was released to the public in the second MindsEye update.
+                It included many of the sub missions but none of the main storyline missions, and it was appreciated by
+                players
+                and mentioned in reviews of the game as something they were happy to see.
+                Without voice acting and with little localisation available, we were not able to tell much of its story
+                through dialogue.
+            </p>
+        </section>
+        <section>
+            <h2>Lessons</h2>
+            <p>
+                I focus on three pillars that integrate with each other: progression, challenge and economy.
+                These pillars must be entwined and solid as a foundation, and everything else should be built on top of
+                them.
+                During early development there was a lot of back and forth over the currencies, and having too many
+                really destabilised development of the economy, which in turn held back the other two pillars.
+            </p>
+        </section>
+    </main>
+</body>
+
+</html>

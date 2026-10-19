@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MindsEye | Ade Cross</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Michroma&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .project h1 {
+      font-family: "Michroma", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: -0.030em;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap project">
+    <a class="back" href="index.html">Back to all projects</a>
+    <h1>MindsEy<span class="flipText">E</span></h1>
+    <p class="meta">Build A Rocket Boy &middot; 2018&ndash;2026 &middot; Unreal Engine 5 &middot; Lua &middot; Associate &rarr; Lead
+      Technical Designer</p>
+    <div class="youtubeVideo">
+      <iframe src="https://www.youtube.com/embed/fHP4LRdUlYk" title="MindsEye Launch Trailer" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        MindsEye is an action-adventure shooter that follows Jacob Diaz as he tries
+        to make sense of his memory gaps and flashbacks,
+        all centred around a neural implant and the company that created it.
+        Over eight years, I worked on an array of features that shipped
+        in the final game on PS5, Xbox Series X|S and PC, spanning tools programming, system design, gameplay scripting, level design,
+        the live-ops pipeline and in-house tool integration. Along the way the project moved engine mid-production,
+        from Lumberyard to Unreal Engine 4 and then Unreal Engine 5.
+      </p>
+    </section>
+    <section>
+      <h2>What I Built</h2>
+      <ul>
+        <li>Helped architect the integration of Arcadia, the in-game UGC editor, into MindsEye.
+          <ul>
+            <li>Designed the hybrid sandbox level, which merged an empty sandbox with the Red Rock City map so builders
+              could create on top of the MindsEye environments with the full range of functionality, from mass
+              pedestrian systems and weather management to the dynamic scenes used in missions.</li>
+            <li>Co-designed the spawn system that layers lightweight, Arcadia-built scenes on top of the main campaign,
+              enriching the levels and bringing the environment to life.</li>
+            <li>Implemented 3D visual scripting tools that let players create their own gameplay experiences without
+              needing to program.</li>
+          </ul>
+        </li>
+        <li>Supported the pipeline that exported standalone, online-only content from the backend and made it accessible
+          offline, as required for a single-player game package. This was developed hand in hand with the backend and
+          live-ops teams. I was responsible for manual nightly exports and debugging until a fully automated pipeline
+          was in place, which I continued to support whenever a failure was flagged.</li>
+        <li>Working from a high-level brief, developed a system that let players step through portals into alternative
+          experiences. Players would walk through a portal, play the content, then return to the mission with that
+          content unlocked to replay at any time.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Lessons</h2>
+        <ul>
+          <li>
+            MindsEye had a difficult launch, and working through it taught me a great deal.
+            Communication is the backbone of any pipeline; without a shared understanding from top to bottom, setbacks are
+            unavoidable.
+            That is why the three qualities I value most in the people I work with are trust, reliability and accountability.
+          </li>
+          <li>
+            Most importantly for my personal development, I worked with a lot of very intelligent people. I always try 
+            to talk to the colleagues that inspire me about their own core principles that have helped them get to where they are,
+            in life and in work, then take the best and fuse them into mine.
+          </li>
+        </ul>
+    </section>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+:root {
+  --paper: #f7f6f2;
+  --ink: #1c1c1c;
+  --muted: #6b6b66;
+  --tile: #e4e2db;
+  --font: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --labelBackground: rgba(247, 246, 242, 0.6);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 17px/1.6 var(--font); }
+a { color: inherit; }
+a:focus-visible { outline: 3px solid var(--ink); outline-offset: 4px; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+
+/* Home page */
+.intro { padding: 72px 0 48px; text-align: center; }
+.intro h1 { margin: 0; font-size: clamp(2.2rem, 6vw, 3.5rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; }
+.intro p { margin: 8px 0 0; color: var(--muted); font-size: 1.15rem; }
+
+.grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; padding-bottom: 80px; }
+.tile { display: block; position: relative; aspect-ratio: 4 / 3; background: var(--tile); overflow: hidden; text-decoration: none; border-radius: 5px; transition: transform 0.3s ease; }
+.tile:hover, .tile:focus-visible {transform: scale(1.1); z-index: 1;}
+.tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition:  0.5s ease;}
+.tile:hover img, .tile:focus-visible img {transform: scale(1.1);}
+.tile .ph { position: absolute; inset: 0; display: grid; place-items: center; color: var(--muted); font-size: 0.95rem; }
+.tile .label { position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 12px; text-align: center; background: var(--labelBackground); font-size: 0.95rem; font-weight: 500; transform: translateY(100%); transition: transform 0.2s ease; }
+.tile:hover .label, .tile:focus-visible .label { transform: translateY(0); }
+
+.backgroundCycle {position: fixed; inset: 0; z-index: -1; pointer-events: none;}
+.backgroundCycle div {position: absolute; inset: 0; background-size: cover; background-position: center; filter: grayscale(1); opacity: 0; transition: opacity 1.5s ease;}
+.backgroundCycle div.show {opacity: 0.12;}
+
+.highlights {
+  list-style: none; 
+  padding: 0; 
+  margin:32px 0 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 16px; 
+  text-align: center;
+}
+
+.highlights strong {
+  display: block;
+  font-size: 1.6rem;
+}
+@media (max-width:900px){
+  .highlights{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Project pages */
+.back { display: block; margin: 32px 0 0 auto; color: var(--muted); text-decoration: none; width: fit-content; }
+.back:hover { color: var(--ink); }
+.project h1 { margin: 24px 0 4px; font-size: clamp(2rem, 5vw, 3rem); letter-spacing: -0.02em; line-height: 1.1; }
+.project .flipText {display: inline-block; transform: scaleX(-1); margin-left: 0.05em;}
+.project .meta { color: var(--muted); margin: 0 0 32px; }
+.project .hero { aspect-ratio: 16 / 9; background: var(--tile); display: grid; place-items: center; color: var(--muted); margin-bottom: 40px; }
+.project .hero img { width: 100%; height: 100%; object-fit: cover; }
+.project .youtubeVideo { aspect-ratio: 16/9; margin-bottom: 40px;}
+.project .youtubeVideo iframe{ width: 100%; height: 100%; border: 0;}
+.project section { max-width: 65ch; margin-bottom: 32px; }
+.project h2 { font-size: 1.2rem; margin: 0 0 6px; }
+.project p { margin: 0; }
+.project { padding-bottom: 80px; }
+
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .tile .label, title img, .backgroundCycle div { transition: none; } }

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grenade Football | Ade Cross</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;700&family=Black+Ops+One&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+      .project h1 {
+      font-family: "Black Ops One", sans-serif;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size: clamp(1.6rem, 4.5vw, 2.6rem);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="wrap project">
+    <a class="back" href="index.html">Back to all projects</a>
+    <h1>Grenade Football</h1>
+    <p class="meta">Unreal Engine 5 &middot; ARCADIA &middot; Lead Technical Designer</p>
+    <div class="youtubeVideo">
+      <iframe src="https://www.youtube.com/embed/FvOoOfsjLh0" title="Grenade Football Launch Trailer" loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <section>
+      <h2>Overview</h2>
+      <p>
+        Grenade Football is a fast-paced 5v5 reimagining of football that asks, "Why not use a gun?"
+        Players launch the ball using a small cannon that fits snugly in their arm, as they jump, double jump and dash
+        around the pitch to tackle each other and work as a team to put the ball in the opponent's net.
+      </p>
+      <p>
+        It was BARB's first step back into the Everywhere art style, and was timed around the end of the World Cup
+        to tie in with what the world was watching. I led it in parallel with the
+        <a href="MPRaceProject.html">Multiplayer Races</a>, each with its own team.
+      </p>
+    </section>
+    <section>
+      <h2>My Role</h2>
+      <ul>
+        <li>Started with a rough prototype, developing a vertical slice over two weeks to see how the game felt.</li>
+        <li>Once the demo was approved, we moved into full development, bringing in two technical level designers and
+          dividing the functionality into areas: custom UI, possession tracking, overtime and goalkeeper rules. Guiding and teaching
+          them how to implement logic in a structure that is compatible with multiplayer functionality.
+        </li>
+        <li>Overseeing progress of Audio, Art and Network code teams to make sure work was in line with what the project needed.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>What I Built</h2>
+      <p>
+        Implemented a dynamic live commentator system, inspired by some of the more popular football games,
+        that calls out the action as it happens.
+      </p>
+      <ul>
+        <li>The commentator reacts to player movement, positioning and events, using both current and historical data,
+          whether it is the first goal of the game or a player's 100th.</li>
+        <li>Historical data is stored in persistent online variables for each player, fetched at the start of the match
+          and updated live, so a player's data for the match is preserved even if they disconnect.</li>
+        <li>Lines name the team and player involved: a missed shot gets "What a miss!", while a tackle might be called
+          as "Blue player five gains possession" or "Red player two lost the ball".</li>
+        <li>Each event has several recorded voiceovers, so the commentary feels unique every time and sounds like a live
+          commentator.</li>
+        <li>Every line has a priority. A high-priority moment such as kick-off or a goal is never interrupted, some lines are
+          known to follow others and are delayed to fit, and lower-priority lines cannot override what is already
+          playing.</li>
+        <li>Timers stop the commentator repeating itself. If six or seven tackles happen within a few seconds, the same
+          line is not called again until enough time has passed.</li>
+        <li>Common events only have a random chance of being called, so not every pass is announced, and a tackle is
+          randomly voiced from either the positive or the negative side.</li>
+      </ul>
+    </section>
+    <section>
+      <h2>Result</h2>
+      <p>
+        Grenade Football went from prototype to launch in three months. 
+        Football is a crowded space, from FIFA to Rocket League, and many studios release football games around the
+        World Cup because of its international draw.
+        The game was designed to be played as 5v5, but a late decision meant a match could not start with fewer than
+        three players a side. Launch data showed our player base could not fill that, so many players were locked out.
+        I personally edited the minimum player count on the live game, instantaneously changing what was accessible to players. 
+        We further added an AI goalkeeper for matches that dropped below the recommended 3v3.
+      </p>
+    </section>
+    <section>
+      <h2>Lesson</h2>
+        <ul>
+          <li>
+            When teaching others about multiplayer scripting, one of the best things I can do is to walk them through working examples, then 
+            let them play and poke about with the example logic themselves before jumping into actual tasks. Having the comfortability of knowledge will
+            always help someone move faster.
+          </li>
+          <li>A lesson I took from it: validate player-count assumptions against the real player base before launch, not after.</li>
+        </ul>
+    </section>
+  </main>
+</body>
+
+</html>
